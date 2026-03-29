@@ -1,4 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sykli – Yksityinen kuukautisten seuranta</title>
+    
+    <!-- Link to the app's manifest (important) -->
+    <link rel="manifest" href="/app/manifest.json">
+    
+    <style>
+        :root {
+            --primary: #e07a5f;
+            --soft-bg: #f9f4f0;
+            --text: #3d2b2b;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--soft-bg);
+            color: var(--text);
+            line-height: 1.6;
+            text-align: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #d46a4f;
+        }
+        .tagline {
+            font-size: 1.35rem;
+            color: #6b4e4e;
+            margin-bottom: 30px;
+        }
+        .description {
+            font-size: 1.15rem;
+            margin: 20px 0 40px;
+            color: #555;
+        }
+        .install-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(224, 122, 95, 0.3);
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .install-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(224, 122, 95, 0.4);
+        }
+        .benefits {
+            margin: 50px 0;
+            text-align: left;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .benefits ul {
+            list-style: none;
+        }
+        .benefits li {
+            padding: 12px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #e8d9d0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer {
+            margin-top: 60px;
+            font-size: 0.95rem;
+            color: #888;
+        }
+        .icon-preview {
+            width: 120px;
+            height: 120px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-preview">🌙</div>
+        
+        <h1>Sykli</h1>
+        <p class="tagline">Kuukautisten seuranta, joka kunnioittaa yksityisyyttäsi</p>
+        
+        <div class="description">
+            <strong>Ei mainoksia • Ei premiumia • Ei tietojen keräämistä</strong><br>
+            Kaikki tiedot pysyvät laitteellasi.
+        </div>
 
+        <button id="installBtn" class="install-btn">
+            📱 Asenna Sykli kotiin
+        </button>
+
+        <p id="installHint" style="margin-top: 20px; color: #777; display: none;">
+            Tai paina selaimen valikosta "Lisää aloitusnäytölle"
+        </p>
+
+        <div class="benefits">
+            <ul>
+                <li>✅ Täysin paikallinen tallennus (IndexedDB)</li>
+                <li>✅ Ennustaa kuukautiset ja hedelmällisyyden ikkunan</li>
+                <li>✅ Muistutukset ja ilmoitukset</li>
+                <li>✅ Oireiden, mielialan ja vuodon seuranta</li>
+                <li>✅ Vie tiedot helposti varmuuskopiointia varten</li>
+                <li>✅ Suunniteltu suomalaisille naisille</li>
+                <li>✅ Avoin lähdekoodi – voit tarkistaa kaiken itse</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><a href="https://github.com/Hobbyaccu/Sykli" target="_blank" style="color: #d46a4f;">GitHub →</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                Yksityisyys on meille tärkeintä.<br>
+                Sovellus ei vaadi tiliä eikä lähetä mitään tietoja ulos.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let deferredPrompt = null;
+        const installBtn = document.getElementById('installBtn');
+        const installHint = document.getElementById('installHint');
+
+        // Show install button when possible
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'inline-flex';
+            installHint.style.display = 'block';
+        });
+
+        // Handle install button click
+        installBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            
+            const result = await deferredPrompt.prompt();
+            console.log(`Install result: ${result.outcome}`);
+            
+            if (result.outcome === 'accepted') {
+                deferredPrompt = null;
+            }
+        });
+
+        // Detect if already running as installed PWA → redirect to real app
+        function checkIfInstalled() {
+            if (window.matchMedia('(display-mode: standalone)').matches || 
+                window.navigator.standalone === true) {
+                window.location.replace('/app/index.html');
+            }
+        }
+
+        // Check on load and when visibility changes
+        window.addEventListener('load', checkIfInstalled);
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) checkIfInstalled();
+        });
+
+        // Optional: After successful install
+        window.addEventListener('appinstalled', () => {
+            console.log('Sykli was installed successfully!');
+            setTimeout(() => {
+                window.location.replace('/app/index.html');
+            }, 800);
+        });
+    </script>
+</body>
 </html>
