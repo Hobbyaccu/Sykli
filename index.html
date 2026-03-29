@@ -6,7 +6,7 @@
     <title>Sykli – Yksityinen kuukautisten seuranta</title>
     
     <!-- Link to the app's manifest (important) -->
-    <link rel="manifest" href="app/manifest.json">
+    <link rel="manifest" href="manifest.json">
     
     <style>
         :root {
@@ -171,7 +171,7 @@
         function checkIfInstalled() {
             if (window.matchMedia('(display-mode: standalone)').matches || 
                 window.navigator.standalone === true) {
-                window.location.replace('app/index.html');
+                window.location.replace('index.html');
             }
         }
 
@@ -185,7 +185,7 @@
         window.addEventListener('appinstalled', () => {
             console.log('Sykli was installed successfully!');
             setTimeout(() => {
-                window.location.replace('app/index.html');
+                window.location.replace('index.html');
             }, 800);
         });
     </script>
