@@ -196,27 +196,36 @@
 </section>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4dce4]/70 dark:bg-[#3d3236]/70 backdrop-blur-xl rounded-t-[3rem] shadow-[0px_-8px_32px_rgba(56,48,52,0.05)] no-border tonal-shift">
-<!-- Cycle (Active) -->
-<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#ac2d5e] to-[#fd6c9c] text-white rounded-full p-3 mb-2 scale-110 shadow-lg hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">water_drop</span>
-<span class="font-plus-jakarta text-[8px] font-semibold uppercase tracking-widest mt-1">Cycle</span>
-</a>
-<!-- Calendar -->
-<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
-<span class="material-symbols-outlined">calendar_month</span>
-<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Calendar</span>
-</a>
-<!-- Pregnancy -->
-<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
-<span class="material-symbols-outlined">child_care</span>
-<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Pregnancy</span>
-</a>
-<!-- Insights -->
-<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
-<span class="material-symbols-outlined">bar_chart</span>
-<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
-</a>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f4dce4]/90 dark:bg-[#3d3236]/90 backdrop-blur-xl rounded-t-[3rem] shadow-[0px_-8px_32px_rgba(56,48,52,0.05)]">
+    
+    <!-- Cycle (Active) -->
+    <button onclick="navigateTo('landing.html')" 
+            class="flex flex-col items-center justify-center bg-gradient-to-br from-[#ac2d5e] to-[#fd6c9c] text-white rounded-full p-3 mb-1 scale-110 shadow-lg active:scale-95 transition-all">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+        <span class="font-plus-jakarta text-[8px] font-semibold uppercase tracking-widest mt-1">Cycle</span>
+    </button>
+
+    <!-- Calendar -->
+    <button onclick="navigateTo('calendar.html')" 
+            class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-3 active:scale-95 transition-all">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Calendar</span>
+    </button>
+
+    <!-- Pregnancy -->
+    <button onclick="navigateTo('pregnancy.html')" 
+            class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-3 active:scale-95 transition-all">
+        <span class="material-symbols-outlined">child_care</span>
+        <span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Pregnancy</span>
+    </button>
+
+    <!-- Insights -->
+    <button onclick="navigateTo('insights.html')" 
+            class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-3 active:scale-95 transition-all">
+        <span class="material-symbols-outlined">bar_chart</span>
+        <span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
+    </button>
 </nav>
 <!-- Contextual FAB (Suppressed based on prompt focus being dashboard display, but provided if user feels action is needed) -->
 <!-- Log Button -->
