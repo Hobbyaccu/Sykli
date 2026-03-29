@@ -4,7 +4,7 @@
   "short_name": "Sykli",
   "description": "Yksityinen kuukautisten seuranta",
   "start_url": "Sykli/app/index.html",
-  "scope": "/app/",
+  "scope": "Sykli/app/",
   "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#f9f4f0",
