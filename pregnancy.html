@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pregnancy Overview | Radiant Sanctuary</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#68575e",
+              "surface-container": "#f7ebee",
+              "surface": "#fff8f8",
+              "error": "#a8364b",
+              "on-tertiary-fixed-variant": "#6b4d73",
+              "on-secondary-fixed": "#4b3b41",
+              "primary-container": "#fd6c9c",
+              "secondary": "#6c5a61",
+              "surface-container-high": "#f2e5e9",
+              "on-surface-variant": "#665c60",
+              "inverse-primary": "#fd6c9c",
+              "outline-variant": "#bbafb3",
+              "on-error-container": "#6e0523",
+              "tertiary-dim": "#66496e",
+              "on-error": "#fff7f7",
+              "secondary-container": "#f4dce4",
+              "on-background": "#383034",
+              "inverse-surface": "#110d0f",
+              "inverse-on-surface": "#a39b9d",
+              "on-primary-fixed": "#000000",
+              "on-primary": "#fff7f7",
+              "surface-container-low": "#fcf1f4",
+              "on-tertiary": "#fff7fb",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#e8c2ef",
+              "error-dim": "#6b0221",
+              "secondary-dim": "#5f4f55",
+              "background": "#fff8f8",
+              "on-primary-fixed-variant": "#590029",
+              "on-secondary-container": "#5e4d54",
+              "primary-fixed-dim": "#ec5f8f",
+              "surface-tint": "#ac2d5e",
+              "on-tertiary-fixed": "#4d3155",
+              "on-secondary": "#fff7f8",
+              "primary-dim": "#9c1f52",
+              "tertiary": "#73547a",
+              "on-tertiary-container": "#614469",
+              "primary": "#ac2d5e",
+              "on-primary-container": "#47001f",
+              "on-surface": "#383034",
+              "secondary-fixed": "#f4dce4",
+              "error-container": "#f97386",
+              "surface-bright": "#fff8f8",
+              "secondary-fixed-dim": "#e6ced6",
+              "surface-container-highest": "#eddfe3",
+              "tertiary-container": "#f7d0fd",
+              "surface-variant": "#eddfe3",
+              "tertiary-fixed": "#f7d0fd",
+              "surface-dim": "#e4d7db",
+              "primary-fixed": "#fd6c9c",
+              "outline": "#83787c"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fff8f8] dark:bg-[#1c1b1c] shadow-[0px_8px_32px_rgba(56,48,52,0.05)]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with a serene expression and soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq33q47vTIQxIqD7xfb7phcnnFM5J5WtdX_7-UbvWu6lqRGpf8CX5nV6tGTJ9bjl_T8uXMAKcaEAG8-2a8t2fMwDcm-O_vxem1TZ1XXbHJDJEKKEuZ_LAnMYaZQ03QE1tPvLsrPDQbsncZFNs7T8NC-cPJA_qgJWGqjjA1QosZzcIX2tp2OUqGJtyV91jUUyOJCxN4-12cNJ5UcFah77-yNCLbWj4hk2u-bAoxi740WvNM4PF2376-0CZa_0eopQhp3mVWdhJyPeQ"/>
+</div>
+<h1 class="text-[#ac2d5e] font-manrope font-extrabold text-2xl tracking-tighter">Radiant Sanctuary</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#f2e5e9] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#ac2d5e]" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto">
+<!-- Hero Section: Week Display -->
+<section class="mb-12 relative overflow-hidden">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<p class="font-label text-sm uppercase tracking-[0.2em] text-primary mb-2">Second Trimester</p>
+<h2 class="font-headline text-7xl md:text-9xl font-extrabold tracking-tighter text-on-surface leading-none">Week 24</h2>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center gap-4 shadow-[0px_8px_32px_rgba(56,48,52,0.05)]">
+<div class="bg-primary bg-gradient-to-br from-primary to-primary-container text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="child_care">child_care</span>
+</div>
+<div>
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Countdown</p>
+<p class="font-headline text-3xl font-bold text-on-surface">112 <span class="text-lg font-medium opacity-60">Days to Go</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Baby Size & Stats -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Baby Size Card -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl overflow-hidden relative group shadow-[0px_8px_32px_rgba(56,48,52,0.05)]">
+<div class="absolute inset-0 bg-gradient-to-tr from-secondary-container/30 to-transparent pointer-events-none"></div>
+<div class="p-8 relative z-10 flex flex-col h-full">
+<h3 class="font-headline text-2xl font-bold mb-4">Baby is the size of an eggplant</h3>
+<p class="text-on-surface-variant mb-8 max-w-xs">Your little one is about 11.8 inches long and weighs nearly 1.3 pounds now.</p>
+<div class="mt-auto flex justify-center py-4 group-hover:scale-105 transition-transform duration-500">
+<!-- Eggplant Illustration Placeholder -->
+<div class="relative w-48 h-48 bg-tertiary-container/40 rounded-full flex items-center justify-center">
+<img alt="Eggplant" class="w-32 h-32 object-contain drop-shadow-2xl" data-alt="vibrant purple eggplant on a soft minimal pastel pink background with artistic soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoTVk75yxkyDwIv2VLmV_hP6c_RI62RsoSY8ghnrANuyIf6L_4IUokFrdo219gRNkLBltDXHcfV9Bgm0J_8ohVRSish3X7mpkcoKP8x9iFJfyUj_tFjTJ_QZPVjjGL6OiYZw2gFxAwHr8iof8mqcRVHCe_s7qgvWtmhQtyg8Uac77cm_pGfhod-rJdXyPJesh0axuuyLf3W2Ktx7aDYpW8USk-HFOfbGDO6_cyA4j0pYDprGEwY5D4CFUU1um7_AhuzjF847Tb60Y"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Health Snapshot -->
+<div class="md:col-span-5 space-y-6">
+<div class="bg-surface-container rounded-xl p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="monitor_heart">monitor_heart</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Vitality</span>
+</div>
+<p class="font-headline text-2xl font-bold">142 BPM</p>
+<p class="text-sm text-on-surface-variant">Last fetal heartbeat check</p>
+</div>
+<div class="bg-tertiary-container/30 rounded-xl p-6 border border-white/40">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="fitness_center">fitness_center</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Activity</span>
+</div>
+<p class="font-headline text-2xl font-bold">Active Kickers</p>
+<p class="text-sm text-on-surface-variant">Increased movement recorded today</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between">
+<div>
+<p class="font-label text-sm font-semibold">Weight Gain</p>
+<p class="text-2xl font-bold text-primary">+12 lbs</p>
+</div>
+<div class="h-12 w-24 flex items-end gap-1">
+<div class="w-2 bg-primary/20 rounded-t-full h-1/2"></div>
+<div class="w-2 bg-primary/20 rounded-t-full h-3/4"></div>
+<div class="w-2 bg-primary rounded-t-full h-full"></div>
+<div class="w-2 bg-primary/40 rounded-t-full h-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Appointments & Daily Tips -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Upcoming Appointments -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-3xl font-bold tracking-tight">Upcoming Appointments</h3>
+<button class="text-primary font-label text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-6">
+<!-- Appointment Item -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-20 bg-surface-container-high rounded-lg flex flex-col items-center justify-center">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">May</span>
+<span class="text-2xl font-bold">18</span>
+</div>
+<div class="flex-grow pt-1">
+<h4 class="font-bold text-lg mb-1">Glucose Screening</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                                09:30 AM • Dr. Aris Thorne
+                            </p>
+</div>
+<button class="self-center p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Appointment Item -->
+<div class="flex gap-6 items-start opacity-70">
+<div class="flex-shrink-0 w-16 h-20 bg-surface-container-high rounded-lg flex flex-col items-center justify-center">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Jun</span>
+<span class="text-2xl font-bold">04</span>
+</div>
+<div class="flex-grow pt-1">
+<h4 class="font-bold text-lg mb-1">Prenatal Check-up</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                                11:00 AM • St. Jude’s Clinic
+                            </p>
+</div>
+<button class="self-center p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Daily Tips / Insight Bubble -->
+<section>
+<h3 class="font-headline text-3xl font-bold tracking-tight mb-8">Daily Insights</h3>
+<div class="bg-tertiary-container rounded-lg p-8 relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h4 class="font-headline text-xl font-bold text-on-tertiary-container mb-4">Focus on your posture</h4>
+<p class="text-on-tertiary-container/80 leading-relaxed mb-6">
+                        As your center of gravity shifts, you may experience back strain. Try gentle pelvic tilts and ensure your desk setup is ergonomic to alleviate pressure on your lower spine.
+                    </p>
+<button class="bg-white px-6 py-3 rounded-full text-tertiary font-bold text-sm shadow-sm hover:shadow-md transition-shadow">
+                        Read More
+                    </button>
+</div>
+<!-- Secondary Insight Card -->
+<div class="mt-6 p-6 bg-surface-container-low rounded-lg flex items-center gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+<img alt="Yoga" class="w-full h-full object-cover" data-alt="woman practicing prenatal yoga in a bright airy studio with soft sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhKJHqFnHhccy4g0yehN31g17RLOgnEKU2FtVf_bzGh9NEHgvm6wYsrRcQNsC-rCNBBLzL-p8UCASmbLjCnpzsYNUPAgKL6i9NymiI6awvTsS7JyIsmxdtheZ44r6ZNwE2Es3RXfNKx0yX_fkBkEGaeBAvBOdP-0q7zmGUcrw4UNx0V_5xC8QCTONqJQ3p4C2LXQF9Wp99bNf_MEeWiMJYdLE-im_BfiorbmjgH7K-cTYoTFx2-ND0lhrxKKO5KiK2-ed6nBrO_Fk"/>
+</div>
+<div>
+<p class="font-bold mb-1">Evening Relaxation</p>
+<p class="text-sm text-on-surface-variant italic">"A 10-minute meditation can improve fetal heart rate variability."</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB: Log Today's Progress -->
+<div class="fixed bottom-32 right-6 z-40">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white p-5 rounded-full shadow-[0px_8px_32px_rgba(172,45,94,0.3)] hover:scale-110 active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="add" style="font-variation-settings: 'FILL' 0, 'wght' 700;">add</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4dce4]/70 dark:bg-[#3d3236]/70 backdrop-blur-xl rounded-t-[3rem] shadow-[0px_-8px_32px_rgba(56,48,52,0.05)]">
+<!-- Cycle -->
+<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="water_drop">water_drop</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest">Cycle</span>
+</a>
+<!-- Calendar -->
+<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_month">calendar_month</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest">Calendar</span>
+</a>
+<!-- Pregnancy (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#ac2d5e] to-[#fd6c9c] text-white rounded-full p-3 mb-2 scale-110 shadow-lg hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="child_care" style="font-variation-settings: 'FILL' 1;">child_care</span>
+<span class="hidden font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest">Pregnancy</span>
+</a>
+<!-- Insights -->
+<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bar_chart">bar_chart</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest">Insights</span>
+</a>
+</nav>
+</body></html>

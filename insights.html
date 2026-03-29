@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Health Insights - Radiant Sanctuary</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#68575e",
+              "surface-container": "#f7ebee",
+              "surface": "#fff8f8",
+              "error": "#a8364b",
+              "on-tertiary-fixed-variant": "#6b4d73",
+              "on-secondary-fixed": "#4b3b41",
+              "primary-container": "#fd6c9c",
+              "secondary": "#6c5a61",
+              "surface-container-high": "#f2e5e9",
+              "on-surface-variant": "#665c60",
+              "inverse-primary": "#fd6c9c",
+              "outline-variant": "#bbafb3",
+              "on-error-container": "#6e0523",
+              "tertiary-dim": "#66496e",
+              "on-error": "#fff7f7",
+              "secondary-container": "#f4dce4",
+              "on-background": "#383034",
+              "inverse-surface": "#110d0f",
+              "inverse-on-surface": "#a39b9d",
+              "on-primary-fixed": "#000000",
+              "on-primary": "#fff7f7",
+              "surface-container-low": "#fcf1f4",
+              "on-tertiary": "#fff7fb",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#e8c2ef",
+              "error-dim": "#6b0221",
+              "secondary-dim": "#5f4f55",
+              "background": "#fff8f8",
+              "on-primary-fixed-variant": "#590029",
+              "on-secondary-container": "#5e4d54",
+              "primary-fixed-dim": "#ec5f8f",
+              "surface-tint": "#ac2d5e",
+              "on-tertiary-fixed": "#4d3155",
+              "on-secondary": "#fff7f8",
+              "primary-dim": "#9c1f52",
+              "tertiary": "#73547a",
+              "on-tertiary-container": "#614469",
+              "primary": "#ac2d5e",
+              "on-primary-container": "#47001f",
+              "on-surface": "#383034",
+              "secondary-fixed": "#f4dce4",
+              "error-container": "#f97386",
+              "surface-bright": "#fff8f8",
+              "secondary-fixed-dim": "#e6ced6",
+              "surface-container-highest": "#eddfe3",
+              "tertiary-container": "#f7d0fd",
+              "surface-variant": "#eddfe3",
+              "tertiary-fixed": "#f7d0fd",
+              "surface-dim": "#e4d7db",
+              "primary-fixed": "#fd6c9c",
+              "outline": "#83787c"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f8;
+            color: #383034;
+            -webkit-font-smoothing: antialiased;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 8px 32px rgba(56, 48, 52, 0.05);
+        }
+        .chart-line-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fff8f8] dark:bg-[#1c1b1c] shadow-[0px_8px_32px_rgba(56,48,52,0.05)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Soft-lit portrait of a calm woman with a serene expression, editorial photography style with neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIcVu8xURvl1q0alyW5_BV5AInnGFZcfsTHqC2lCWNnS8g-OTCsyleClc5W-Ln0hfhoNevIjl9onQ-PAjiRZRzTRK3iitzjkXEygSsLHlU27hK5ucUA7VPvpSrbM9xEVTJCQv_k9pIONuUySnnmkyJAMsxoVDw4MXWSs-MnDXHjqycJguDLUAtPoQat5Yf5rHihVyN8uGx6SzCbha2IhYCKNHxo0-1h3_BhbawVY_GsE-FXVvY3XoaW4lI-9Pbml1mRrNLV6XfdfQ"/>
+</div>
+<h1 class="text-[#ac2d5e] font-manrope font-extrabold text-2xl tracking-tighter">Radiant Sanctuary</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#f2e5e9] dark:hover:bg-[#3d3236] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#ac2d5e] dark:text-[#fd6c9c]">settings</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-5xl mx-auto space-y-12">
+<!-- Page Header -->
+<section class="space-y-2">
+<p class="font-body text-primary font-semibold tracking-widest uppercase text-[10px]">Monthly Report</p>
+<h2 class="font-headline text-5xl font-extrabold tracking-tight text-on-surface">Health Insights</h2>
+<p class="font-body text-on-surface-variant max-w-md">Your body's rhythms, visualized. Explore the subtle patterns of your sanctuary.</p>
+</section>
+<!-- Bento Grid Insights -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Cycle Length History (Large) -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 editorial-shadow relative overflow-hidden">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Cycle Length History</h3>
+<p class="font-body text-sm text-on-surface-variant">Last 6 months</p>
+</div>
+<div class="text-right">
+<span class="text-4xl font-headline font-extrabold text-primary">28</span>
+<span class="text-sm font-body text-on-surface-variant block">Avg. Days</span>
+</div>
+</div>
+<!-- Simple Line Chart SVG -->
+<div class="h-48 w-full relative mt-4">
+<svg class="w-full h-full preserve-3d" viewbox="0 0 400 100">
+<!-- Grid Lines -->
+<line opacity="0.3" stroke="#bbafb3" stroke-dasharray="4" stroke-width="0.5" x1="0" x2="400" y1="20" y2="20"></line>
+<line opacity="0.3" stroke="#bbafb3" stroke-dasharray="4" stroke-width="0.5" x1="0" x2="400" y1="50" y2="50"></line>
+<line opacity="0.3" stroke="#bbafb3" stroke-dasharray="4" stroke-width="0.5" x1="0" x2="400" y1="80" y2="80"></line>
+<!-- Smooth Line Path -->
+<path class="chart-line-path" d="M 0 60 C 40 55, 80 75, 120 40 C 160 15, 200 45, 240 50 C 280 55, 320 20, 360 30 C 380 35, 400 45, 400 45" fill="none" stroke="url(#paint0_linear)" stroke-linecap="round" stroke-width="4"></path>
+<!-- Area Fill -->
+<path d="M 0 60 C 40 55, 80 75, 120 40 C 160 15, 200 45, 240 50 C 280 55, 320 20, 360 30 C 380 35, 400 45, 400 45 V 100 H 0 V 60 Z" fill="url(#paint1_linear)" opacity="0.1"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOn some" id="paint0_linear" x1="0" x2="400" y1="0" y2="0">
+<stop stop-color="#ac2d5e"></stop>
+<stop offset="1" stop-color="#fd6c9c"></stop>
+</lineargradient>
+<lineargradient gradientunits="userSpaceOnUse" id="paint1_linear" x1="0" x2="0" y1="0" y2="100">
+<stop stop-color="#ac2d5e"></stop>
+<stop offset="1" stop-color="#ac2d5e" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Labels -->
+<div class="flex justify-between mt-4 font-body text-[10px] text-on-surface-variant uppercase tracking-widest">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+</div>
+</div>
+</div>
+<!-- Quick Insight (Small) -->
+<div class="md:col-span-4 bg-tertiary-container rounded-xl p-8 editorial-shadow flex flex-col justify-between">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div class="mt-8">
+<h4 class="font-headline text-xl font-bold text-on-tertiary-container mb-2">Cycle Stability</h4>
+<p class="font-body text-sm text-on-tertiary-container opacity-80 leading-relaxed">Your cycle is 94% regular. This consistency is a great sign of hormonal balance.</p>
+</div>
+<button class="mt-6 text-tertiary font-bold text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+                    Read analysis <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Common Symptoms (Vertical Bar Chart) -->
+<div class="md:col-span-5 bg-surface-container-low rounded-xl p-8 editorial-shadow">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-8">Common Symptoms</h3>
+<div class="space-y-6">
+<!-- Bar 1 -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-body text-sm font-semibold text-on-surface">Cramps</span>
+<span class="font-body text-xs text-on-surface-variant">12 days</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Bar 2 -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-body text-sm font-semibold text-on-surface">Fatigue</span>
+<span class="font-body text-xs text-on-surface-variant">8 days</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 55%;"></div>
+</div>
+</div>
+<!-- Bar 3 -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-body text-sm font-semibold text-on-surface">Headaches</span>
+<span class="font-body text-xs text-on-surface-variant">3 days</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Bar 4 -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-body text-sm font-semibold text-on-surface">Mood Swings</span>
+<span class="font-body text-xs text-on-surface-variant">5 days</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mood Trends (Circular / Decorative) -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-8 editorial-shadow border border-outline-variant/10 flex items-center gap-8 overflow-hidden">
+<div class="relative w-40 h-40 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="45" stroke="#f7ebee" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="transparent" r="45" stroke="#ac2d5e" stroke-dasharray="282.7" stroke-dashoffset="84" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-headline font-bold text-on-surface">70%</span>
+<span class="text-[10px] font-body text-on-surface-variant uppercase tracking-widest">Calm</span>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline text-2xl font-bold text-on-surface">Emotional Baseline</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Most logs indicate a sense of serenity during your luteal phase, a 12% improvement from last month.</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-primary text-[10px] font-bold rounded-full uppercase tracking-tighter">Serene</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-tighter">Balanced</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Insight Card -->
+<section class="bg-surface-container rounded-xl overflow-hidden relative min-h-[300px] flex items-center editorial-shadow">
+<div class="absolute inset-0 w-full h-full z-0">
+<img alt="Zen garden" class="w-full h-full object-cover opacity-30 mix-blend-multiply" data-alt="Abstract peaceful scene of soft pink flower petals floating in water, tranquil atmosphere, macro photography, ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALWqtCgGJdc9OHcJ4sAgax3dWEhgtWQ-c-aTUqesz3v5RI5zoYS_sQCyLFB3Nac1WoMGUcSAsYepUyK0EDEQwPOYOq4Pkpg-AB0swtp5vQl80i4JduqW4qerDAEuK8uBGoGcVTyhVw9XN3e_PmLXbmIIeSfy70Za80FGfe_3wy631kMPx965l0gaQ7Hg19aVjJr4oBHkgd4NTKFutNTngLUojYFv43yQhgQ_hUzQDcfeHFnoqzaOu4H4Z9BIphVWjhYvHC0XCKT-E"/>
+</div>
+<div class="relative z-10 p-12 max-w-lg">
+<h3 class="font-headline text-3xl font-bold text-on-surface mb-4">Connecting the dots</h3>
+<p class="font-body text-on-surface-variant mb-6 leading-relaxed">We noticed your fatigue levels drop significantly when you log at least 15 minutes of meditation. Consistency is your superpower.</p>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-full font-headline font-bold text-sm shadow-lg active:scale-95 transition-all">
+                    View Personalized Plan
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f4dce4]/70 dark:bg-[#3d3236]/70 backdrop-blur-xl rounded-t-[3rem] shadow-[0px_-8px_32px_rgba(56,48,52,0.05)]">
+<!-- Cycle -->
+<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">water_drop</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest">Cycle</span>
+</a>
+<!-- Calendar -->
+<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">calendar_month</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest">Calendar</span>
+</a>
+<!-- Pregnancy -->
+<a class="flex flex-col items-center justify-center text-[#383034] dark:text-[#eddfe3] p-2 hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">child_care</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest">Pregnancy</span>
+</a>
+<!-- Insights (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#ac2d5e] to-[#fd6c9c] text-white rounded-full p-3 mb-2 scale-110 shadow-lg hover:opacity-80 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-0.5">Insights</span>
+</a>
+</nav>
+</body></html>
