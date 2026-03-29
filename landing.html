@@ -87,13 +87,7 @@
     }
   </style>
   </head>
-<body class="bg-surface text-on-surface min-h-screen pb-32">
-
-<script>
-    function navigateTo(page) {
-        window.location.href = page;
-    }
-</script>        
+<body class="bg-surface text-on-surface min-h-screen pb-32">       
         
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fff8f8] dark:bg-[#1c1b1c] shadow-[0px_8px_32px_rgba(56,48,52,0.05)]">
@@ -234,6 +228,11 @@
         <span class="font-plus-jakarta text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
     </button>
 </nav>
+<script>
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+</script> 
 <!-- Contextual FAB (Suppressed based on prompt focus being dashboard display, but provided if user feels action is needed) -->
 <!-- Log Button -->
 <button class="fixed right-6 bottom-28 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-white rounded-full flex items-center justify-center shadow-xl z-40 active:scale-90 transition-transform">
