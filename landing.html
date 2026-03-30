@@ -1,91 +1,350 @@
 <!DOCTYPE html>
-<html lang="fi">
+
+<html class="light" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#e07a5f">
-    <title>Sykli</title>
-    
-    <!-- Manifest for PWA -->
-    <link rel="manifest" href="manifest.json?v=1.2">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Manrope:wght@200..800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#301216",
+                        "tertiary-fixed-dim": "#d2c4b2",
+                        "surface-variant": "#ebe0dd",
+                        "on-tertiary-container": "#3d3528",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#eeb9bd",
+                        "secondary": "#7c5357",
+                        "on-primary-fixed": "#380d03",
+                        "inverse-primary": "#ffb5a1",
+                        "surface-container-high": "#f1e6e3",
+                        "secondary-fixed": "#ffdadc",
+                        "on-secondary-fixed-variant": "#623c40",
+                        "on-primary-fixed-variant": "#6f3728",
+                        "surface-container-low": "#fdf1ee",
+                        "surface-container": "#f7ebe8",
+                        "tertiary-container": "#a99d8c",
+                        "surface-tint": "#8b4e3d",
+                        "on-tertiary-fixed-variant": "#4f4538",
+                        "surface-container-highest": "#ebe0dd",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#201a19",
+                        "on-background": "#201a19",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fdc7cb",
+                        "surface-dim": "#e3d8d5",
+                        "outline": "#85736e",
+                        "inverse-surface": "#352f2d",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#221a0f",
+                        "primary-container": "#d68c78",
+                        "outline-variant": "#d8c2bc",
+                        "surface-bright": "#fff8f6",
+                        "primary-fixed": "#ffdbd1",
+                        "on-secondary-container": "#795154",
+                        "primary-fixed-dim": "#ffb5a1",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#5a2718",
+                        "inverse-on-surface": "#faeeeb",
+                        "tertiary-fixed": "#efe0cd",
+                        "background": "#fff8f6",
+                        "primary": "#8b4e3d",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface": "#fff8f6",
+                        "tertiary": "#675d4e",
+                        "on-surface-variant": "#53433f"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .mood-bloom-gradient {
+            background: radial-gradient(circle at center, rgba(214, 140, 120, 0.15) 0%, rgba(253, 199, 203, 0.1) 50%, transparent 100%);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="app-header">
-        <div class="logo">
-            🌙 <span>Sykli</span>
+
+<body
+    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Anchor -->
+    <header class="w-full top-0 sticky z-50 bg-[#fff8f6] dark:bg-[#201a19] transition-colors duration-300">
+        <div class="flex justify-between items-center px-8 py-4 w-full max-w-xl mx-auto">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/15">
+                    <img alt="User profile" class="w-full h-full object-cover"
+                        data-alt="Soft-lit portrait of a smiling woman with gentle morning sunlight, warm skin tones, professional lifestyle photography"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZoc958VeNID3ADaXaUggD5_cNurdgQhi9hutXcjoRISVX0_nlfPvmhUrjEGUwGOU7PM-O1H36dsS56nASz4zTesfHDpn8Jk2dkSUJS-SG_ZhMGJykYz6Z1Pihf4oyozIunyjuEWmh5gldlzYqIGSn9A-vvI3-o8-pSnnGu5dN99Hzo1xW6A6C5wFZbKyfDGg8TjFwq4cYUftWf3CJp-4knhZWG8YcAHuWfIcIk76x0I_A0_3XZxMLO6hCN91Q0EKj6rowFjAzFQ" />
+                </div>
+                <h1 class="text-xl font-bold font-headline tracking-tight text-[#8b4e3d] dark:text-[#d68c78]">Today</h1>
+            </div>
+            <button
+                class="p-2 text-[#8b4e3d] dark:text-[#d68c78] hover:bg-[#fdf1ee]/50 rounded-full transition-all active:scale-95 duration-200">
+                <span class="material-symbols-outlined">calendar_today</span>
+            </button>
         </div>
-        <div class="current-date" id="current-date"></div>
     </header>
-
-    <div class="dashboard-content">
-
-        <!-- Status card -->
-        <div class="card" id="status-card">
-            <h2>Tänään</h2>
-            <div id="cycle-status">
-                <!-- Filled by JS -->
+    <main class="max-w-xl mx-auto px-8 pt-4 pb-32 space-y-10">
+        <!-- Cycle Status: The Editorial Hero -->
+        <section class="relative">
+            <div
+                class="bg-surface-container-low rounded-[2.5rem] p-8 overflow-hidden relative border border-outline-variant/10">
+                <!-- Abstract Mood Bloom Background -->
+                <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full mood-bloom-gradient blur-3xl opacity-60">
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <span
+                        class="font-headline text-xs font-bold tracking-[0.2em] uppercase text-on-surface-variant/60 mb-6">Current
+                        Cycle</span>
+                    <!-- Circular Progress Indicator -->
+                    <div class="relative flex items-center justify-center mb-8">
+                        <svg class="w-48 h-48 -rotate-90">
+                            <circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="88"
+                                stroke="currentColor" stroke-width="6"></circle>
+                            <circle class="drop-shadow-sm" cx="96" cy="96" fill="transparent" r="88"
+                                stroke="url(#primaryGradient)" stroke-dasharray="552.92" stroke-dashoffset="138"
+                                stroke-linecap="round" stroke-width="10"></circle>
+                            <defs>
+                                <lineargradient id="primaryGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#8b4e3d"></stop>
+                                    <stop offset="100%" stop-color="#d68c78"></stop>
+                                </lineargradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <span
+                                class="font-headline text-6xl font-extrabold tracking-tighter text-on-surface">12</span>
+                            <span class="font-headline text-sm font-bold text-primary/80 -mt-1">Days left</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 w-full px-4">
+                        <div class="flex flex-col">
+                            <span
+                                class="text-[10px] font-bold tracking-widest text-on-surface-variant/50 uppercase mb-1">Status</span>
+                            <span class="text-sm font-bold text-on-surface">Follicular Phase</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="text-[10px] font-bold tracking-widest text-on-surface-variant/50 uppercase mb-1">Ovulation</span>
+                            <span class="text-sm font-bold text-on-surface">In 4 Days</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Prediction card -->
-        <div class="card">
-            <h3>Seuraavat kuukautiset</h3>
-            <p id="prediction-text" class="status-big">—</p>
-            <p id="prediction-sub" style="color: #6b4e4e; font-size: 1.1rem;">Keskimääräinen kierto: <span id="avg-length">28</span> pv</p>
-        </div>
-
-        <!-- Quick log -->
-        <div class="card">
-            <h3>Kirjaa tänään</h3>
-            <div class="quick-log-grid">
-                <button class="btn-primary" onclick="showLogModal()">
-                    📅 Merkitse kuukautisten alku
-                </button>
-                <button class="btn-secondary" onclick="quickLogSymptom('Kipu')">
-                    😣 Kipu
-                </button>
-                <button class="btn-secondary" onclick="quickLogSymptom('Vuoto')">
-                    🩸 Vuoto
-                </button>
-                <button class="btn-secondary" onclick="quickLogSymptom('Väsymys')">
-                    😴 Väsymys
+        </section>
+        <!-- Pregnancy Contextual Card (Subtle & Elegant) -->
+        <section>
+            <div
+                class="bg-surface-container-lowest border border-outline-variant/15 rounded-3xl p-6 flex items-center gap-6 shadow-[0_12px_40px_rgba(139,78,61,0.04)]">
+                <div class="w-16 h-16 rounded-2xl bg-secondary-fixed flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-secondary scale-110"
+                        style="font-variation-settings: 'FILL' 1;">pregnant_woman</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-headline text-lg font-bold text-on-surface leading-tight">Week 14</h3>
+                    <p class="text-sm text-on-surface-variant font-medium">Baby is the size of a lemon. You may feel a
+                        boost of energy this week.</p>
+                </div>
+                <button
+                    class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
                 </button>
             </div>
-            <p style="font-size: 0.95rem; color: #888; text-align: center; margin-top: 12px;">
-                Kaikki tiedot tallentuvat vain laitteellesi
-            </p>
-        </div>
-
-        <!-- History -->
-        <div class="card">
-            <h3>Viimeiset kierrot</h3>
-            <ul class="history-list" id="history-list">
-                <!-- Filled by JS -->
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- Bottom navigation -->
-    <nav class="bottom-nav">
-        <div class="nav-item active" onclick="switchTab(0)">
-            🏠<br><span>Etusivu</span>
-        </div>
-        <div class="nav-item" onclick="switchTab(1)">
-            📝<br><span>Kirjaa</span>
-        </div>
-        <div class="nav-item" onclick="switchTab(2)">
-            📅<br><span>Kalenteri</span>
-        </div>
-        <div class="nav-item" onclick="switchTab(3)">
-            ⚙️<br><span>Asetukset</span>
-        </div>
+        </section>
+        <!-- Mood Logging: Bento Style -->
+        <section class="space-y-6">
+            <div class="flex justify-between items-end px-1">
+                <h2 class="font-headline text-2xl font-extrabold tracking-tight text-on-surface">How are you?</h2>
+                <span class="text-xs font-bold text-primary">View history</span>
+            </div>
+            <div class="grid grid-cols-4 gap-3">
+                <button
+                    class="flex flex-col items-center justify-center p-4 rounded-3xl bg-surface-container-low hover:bg-surface-container-highest transition-all group active:scale-95">
+                    <div
+                        class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                        <span class="material-symbols-outlined text-tertiary">sentiment_satisfied</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-on-surface-variant">Calm</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 rounded-3xl bg-surface-container-low hover:bg-surface-container-highest transition-all group active:scale-95">
+                    <div
+                        class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                        <span class="material-symbols-outlined text-primary">bolt</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-on-surface-variant">Energy</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 rounded-3xl bg-surface-container-low hover:bg-surface-container-highest transition-all group active:scale-95">
+                    <div
+                        class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                        <span class="material-symbols-outlined text-secondary">sentiment_dissatisfied</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-on-surface-variant">Sad</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 rounded-3xl bg-surface-container-low hover:bg-surface-container-highest transition-all group active:scale-95">
+                    <div
+                        class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                        <span class="material-symbols-outlined text-outline">waves</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-on-surface-variant">Stressed</span>
+                </button>
+            </div>
+        </section>
+        <!-- Mood Trends: Tonal Layering -->
+        <section class="bg-surface-container-low rounded-[2rem] p-8 border border-outline-variant/10">
+            <h3 class="font-headline text-lg font-bold text-on-surface mb-6">Weekly Harmony</h3>
+            <div class="h-40 flex items-end justify-between gap-2 px-2">
+                <!-- Simple Bar Representation -->
+                <div class="flex-1 flex flex-col items-center gap-2">
+                    <div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full bg-primary-container h-16 rounded-full"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-on-surface-variant/40">M</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                    <div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full bg-secondary-container h-20 rounded-full"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-on-surface-variant/40">T</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                    <div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full bg-primary-container h-12 rounded-full"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-on-surface-variant/40">W</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                    <div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full bg-tertiary-container h-24 rounded-full"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-on-surface-variant/40">T</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                    <div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full bg-primary-container h-18 rounded-full"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-on-surface-variant/40">F</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                    <div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full bg-secondary-container h-14 rounded-full"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-on-surface-variant/40">S</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                    <div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full bg-primary-container h-10 rounded-full"></div>
+                    </div>
+                    <span class="text-[10px] font-bold text-on-surface-variant/40">S</span>
+                </div>
+            </div>
+        </section>
+        <!-- Quick Logs: Editorial List -->
+        <section class="space-y-4">
+            <h2 class="font-headline text-xl font-bold text-on-surface px-1">Log Symptoms</h2>
+            <div class="space-y-3">
+                <button
+                    class="w-full flex items-center justify-between p-5 bg-surface-container-lowest rounded-3xl border border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-xl">water_drop</span>
+                        </div>
+                        <span class="font-bold text-on-surface">Flow intensity</span>
+                    </div>
+                    <span
+                        class="text-xs font-bold text-primary bg-primary-fixed px-3 py-1 rounded-full group-hover:scale-105 transition-transform">Add
+                        log</span>
+                </button>
+                <button
+                    class="w-full flex items-center justify-between p-5 bg-surface-container-lowest rounded-3xl border border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+                            <span class="material-symbols-outlined text-secondary text-xl">physical_therapy</span>
+                        </div>
+                        <span class="font-bold text-on-surface">Cramps &amp; discomfort</span>
+                    </div>
+                    <span
+                        class="text-xs font-bold text-primary bg-primary-fixed px-3 py-1 rounded-full group-hover:scale-105 transition-transform">Add
+                        log</span>
+                </button>
+                <button
+                    class="w-full flex items-center justify-between p-5 bg-surface-container-lowest rounded-3xl border border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary text-xl">spa</span>
+                        </div>
+                        <span class="font-bold text-on-surface">Stress levels</span>
+                    </div>
+                    <span
+                        class="text-xs font-bold text-primary bg-primary-fixed px-3 py-1 rounded-full group-hover:scale-105 transition-transform">Add
+                        log</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Navigation Shell -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#ffffff]/70 dark:bg-[#201a19]/70 backdrop-blur-xl rounded-t-[2rem] shadow-[0_-12px_40px_rgba(139,78,61,0.08)]">
+        <a class="flex flex-col items-center justify-center bg-[#d68c78] dark:bg-[#8b4e3d] text-white rounded-full px-5 py-1.5 transition-all duration-300 active:scale-90 ease-out"
+            href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_note</span>
+            <span class="font-manrope text-[11px] font-semibold tracking-wide">Cycle</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#53433f] dark:text-[#d8c2bc] opacity-70 px-5 py-1.5 hover:opacity-100 transition-opacity active:scale-90 ease-out"
+            href="#">
+            <span class="material-symbols-outlined">auto_graph</span>
+            <span class="font-manrope text-[11px] font-semibold tracking-wide">Insights</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#53433f] dark:text-[#d8c2bc] opacity-70 px-5 py-1.5 hover:opacity-100 transition-opacity active:scale-90 ease-out"
+            href="#">
+            <span class="material-symbols-outlined">face_5</span>
+            <span class="font-manrope text-[11px] font-semibold tracking-wide">Mood</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#53433f] dark:text-[#d8c2bc] opacity-70 px-5 py-1.5 hover:opacity-100 transition-opacity active:scale-90 ease-out"
+            href="#">
+            <span class="material-symbols-outlined">edit_note</span>
+            <span class="font-manrope text-[11px] font-semibold tracking-wide">Logs</span>
+        </a>
     </nav>
-
-    <script src="app.js?v=1.2"></script>
 </body>
+
 </html>
